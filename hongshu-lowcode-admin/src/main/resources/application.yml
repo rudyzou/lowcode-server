@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: hongshu-lowcode-admin
+  messages:
+    encoding: UTF-8
+    basename: classpath*:i18n/messages*
+  h2:
+    console:
+      path: /h2
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:~/lowode-admin
+    username: sa
+    password: 123456
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      schema-locations: classpath:db/ddl.sql
+      mode: always
+      data-locations: classpath:db/data.sql

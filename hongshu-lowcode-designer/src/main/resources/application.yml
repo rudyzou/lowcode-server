@@ -1,0 +1,46 @@
+
+spring:
+  application:
+    name: hongshu-lowcode-designer
+  messages:
+    encoding: UTF-8
+    basename: classpath*:i18n/messages*
+  h2:
+    console:
+      path: /h2
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:~/lowcode-designer
+    username: sa
+    password: 123456
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+  sql:
+    init:
+      schema-locations: classpath:db/ddl.sql
+      mode: always
+      #data-locations: classpath:db/data.sql
+hongshu:
+  lowcode:
+    designer:
+      root: c:/dev/lowcoderoot
+logging:
+  level:
+    com.hongshu.lowcode: debug
+sa-token:
+  token-name: x-token
+  token-style: random-32
+  is-log: true
+  is-read-cookie: false
+  is-write-header: true
+server:
+  port: 8090

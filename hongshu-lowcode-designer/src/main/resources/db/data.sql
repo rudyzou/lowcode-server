@@ -1,0 +1,2 @@
+--insert into test values(9,'Hello');
+--insert into test values(10,'designer');
